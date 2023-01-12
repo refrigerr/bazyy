@@ -4,13 +4,14 @@ import java.sql.ResultSet;
 
 public class PracownikSzpitala{
 
+
     static ResultSet pracownikSet;
 
     public PracownikSzpitala(int IDPracownika) {
 
     }
 
-    void danePracownika(int IDPracownika)
+    public static String danePracownika(int IDPracownika)
     {
         try
         {
@@ -28,12 +29,13 @@ public class PracownikSzpitala{
                 imie = pracownikSet.getString("imie");
                 nazwisko = pracownikSet.getString("nazwisko");
             }
-            System.out.println(imie + " " + nazwisko);
+            return imie + " " + nazwisko;
 
         }catch (Exception e)
         {
             e.printStackTrace();
         }
+        return null;
     }
 
     void danePacjenta()
@@ -61,6 +63,7 @@ public class PracownikSzpitala{
     {
 
     }
+
 
 
 }

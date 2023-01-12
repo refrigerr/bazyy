@@ -10,4 +10,5 @@ module com.example.bazyy {
 
     opens com.example.bazyy to javafx.fxml;
     exports com.example.bazyy;
+
 }

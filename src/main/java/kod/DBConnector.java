@@ -9,7 +9,7 @@ public class DBConnector {
 
     static String url = "jdbc:mysql://localhost:3306/szpital";
     static String username = "root";
-    static String password = "mysqlpass";
+    static String password = "admin";
     public static Connection dane;
     public static Statement daneStatement;
 
