@@ -25,6 +25,8 @@ public class MainController {
     }
 
     public void test(ActionEvent actionEvent) {
-        imieLabel.setText(PracownikSzpitala.danePracownika(LoginController.loggedId));
+        int idPracownika = (LoginController.pracownikSzpitala.getIdPracownika());
+        imieLabel.setText(PracownikSzpitala.danePracownika(idPracownika));
+        //imieLabel.setText(PracownikSzpitala.danePracownika(LoginController.loggedId));
     }
 }

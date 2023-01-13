@@ -19,11 +19,14 @@ public class Logowanie {
             lekarz.danePracownika(IDPracownika);
 
             while (loop) {
-                System.out.println("1 - wypisz pacjenta\n" +
-                        "2 - wystaw akt zgonu\n" +
-                        "3 - edytuj dokumentacje medyczna pacjenta\n" +
-                        "4 - Sprawdz ilu jest pacjentow w szpitalu\n" +
-                        "5 - wyloguj\n\n");
+                System.out.println("""
+                        1 - wypisz pacjenta
+                        2 - wystaw akt zgonu
+                        3 - edytuj dokumentacje medyczna pacjenta
+                        4 - Sprawdz ilu jest pacjentow w szpitalu
+                        5 - wyloguj
+
+                        """);
 
                 wybor = Integer.parseInt(scanner.nextLine());
                 switch (wybor) {

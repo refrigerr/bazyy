@@ -1,14 +1,18 @@
 package kod;
 
+import com.example.bazyy.LoginController;
+
 import java.sql.ResultSet;
 
 public class PracownikSzpitala{
 
+    private int idPracownika;
+
 
     static ResultSet pracownikSet;
 
-    public PracownikSzpitala(int IDPracownika) {
-
+    public PracownikSzpitala(int idPracownika) {
+        this.idPracownika = idPracownika;
     }
 
     public static String danePracownika(int IDPracownika)
@@ -64,6 +68,9 @@ public class PracownikSzpitala{
 
     }
 
+    public int getIdPracownika() {
+        return idPracownika;
+    }
 
 
 }

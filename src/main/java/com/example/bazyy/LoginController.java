@@ -9,6 +9,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
 import kod.DBConnector;
+import kod.PracownikSzpitala;
 
 import java.io.IOException;
 import java.sql.ResultSet;
@@ -16,7 +17,7 @@ import java.sql.SQLException;
 
 public class LoginController {
 
-    public static int loggedId;
+    public static PracownikSzpitala pracownikSzpitala;
     @FXML
     private Button loginButton;
     @FXML
@@ -33,13 +34,14 @@ public class LoginController {
 
         Main m = new Main();
         String logindb;
+        String haslozBazy;
         logindb = loginInput.getText();
+        haslozBazy = hasloField.getText();
 
 
-        if (!logindb.isEmpty()){
+        if (!(logindb.isEmpty() || haslozBazy.isEmpty())){
             haslaSet = DBConnector.daneStatement.executeQuery("select haslo from pracownik_szpitala where id_pracownika = "+ logindb);
 
-            String haslozBazy = "";
             haslaSet.next();
             haslozBazy = haslaSet.getString("haslo");
 
@@ -49,15 +51,19 @@ public class LoginController {
                 loginzBazy = loginSet.getString("id_pracownika");
 
             if((hasloField.getText().equals(haslozBazy))&& logindb.equals(loginzBazy)){
-                loggedId = Integer.parseInt(loginInput.getText());
+                pracownikSzpitala = new PracownikSzpitala(Integer.parseInt(loginInput.getText()));
                 m.changeSceneLogged("mainView.fxml");
+            }
+            else {
+                zlyLoginLabel.setText("Zły login lub hasło!");
             }
         }
 
         else
-            zlyLoginLabel.setText("Zły login lub hasło!");
+            zlyLoginLabel.setText("Pole nie może być puste");
 
     }
+
 
     public void loginWithEnter(KeyEvent keyEvent) {
     }

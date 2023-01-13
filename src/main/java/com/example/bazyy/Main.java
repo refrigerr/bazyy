@@ -5,6 +5,7 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 import kod.DBConnector;
@@ -27,7 +28,8 @@ public class Main extends Application {
         Scene scene = new Scene(fxmlLoader.load());
 
 
-        stage.setTitle("Hello!");
+        stage.getIcons().add(new Image("https://cdn2.iconfinder.com/data/icons/military-31/200/aid_first_game_heal_health_kit_life-512.png"));
+        stage.setTitle("Szpital im. Jana Pawła II");
         stage.setScene(scene);
         stage.show();
     }
