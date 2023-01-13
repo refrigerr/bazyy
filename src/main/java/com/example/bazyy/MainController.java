@@ -9,6 +9,7 @@ import kod.PracownikSzpitala;
 import java.io.IOException;
 
 public class MainController {
+
     public Button test;
     @FXML
     private Button wylogujButton;
@@ -24,9 +25,9 @@ public class MainController {
         m.changeSceneLoggedOut("loginView.fxml");
     }
 
-    public void test(ActionEvent actionEvent) {
-        int idPracownika = (LoginController.pracownikSzpitala.getIdPracownika());
-        imieLabel.setText(PracownikSzpitala.danePracownika(idPracownika));
-        //imieLabel.setText(PracownikSzpitala.danePracownika(LoginController.loggedId));
+    public void wyswietlZalogowanegoPracownika(PracownikSzpitala pracownikSzpitala){
+
+        imieLabel.setText(pracownikSzpitala.danePracownika(pracownikSzpitala.getIdPracownika()));
     }
+
 }

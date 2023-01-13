@@ -3,19 +3,20 @@ package kod;
 import com.example.bazyy.LoginController;
 
 import java.sql.ResultSet;
+import java.sql.SQLException;
 
-public class PracownikSzpitala{
+public class PracownikSzpitala extends Osoba{
 
     private int idPracownika;
-
 
     static ResultSet pracownikSet;
 
     public PracownikSzpitala(int idPracownika) {
+        super();
         this.idPracownika = idPracownika;
     }
 
-    public static String danePracownika(int IDPracownika)
+    public String danePracownika(int IDPracownika)
     {
         try
         {
@@ -25,7 +26,7 @@ public class PracownikSzpitala{
             pracownikSet = DBConnector.daneStatement.executeQuery("SELECT id_osoby FROM pracownik_szpitala where id_pracownika = " + IDPracownika);
 
             if(pracownikSet.next())
-                IDOsoby = pracownikSet.getInt("id_osoby");
+                IDOsoby = getIdOsoby();
 
             pracownikSet = DBConnector.daneStatement.executeQuery("SELECT imie, nazwisko FROM osoba where id_osoby = " + IDOsoby);
             if (pracownikSet.next())
@@ -70,6 +71,10 @@ public class PracownikSzpitala{
 
     public int getIdPracownika() {
         return idPracownika;
+    }
+
+    public int getIdOsoby() throws SQLException {
+        return pracownikSet.getInt("id_osoby");
     }
 
 

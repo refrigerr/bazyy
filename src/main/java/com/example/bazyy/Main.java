@@ -1,12 +1,10 @@
 package com.example.bazyy;
 
 import javafx.application.Application;
-import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
-import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 import kod.DBConnector;
 
@@ -34,18 +32,27 @@ public class Main extends Application {
         stage.show();
     }
 
-    public void changeSceneLogged(String fxml) throws IOException {
-        Parent pane = FXMLLoader.load(getClass().getResource(fxml));
-        secondStage.getScene().setRoot(pane);
-        secondStage.setMaximized(true);
-        secondStage.setResizable(true);
-    }
+//    public void changeSceneLogged(String fxml) throws IOException {
+//        FXMLLoader loader = new FXMLLoader();
+//        loader.setLocation(getClass().getResource(fxml));
+//        Parent pane = loader.load();
+//
+//        secondStage.getScene().setRoot(pane);
+//        secondStage.setMaximized(true);
+//        secondStage.setResizable(true);
+//
+//        LoginController controller = loader.getController();
+//    }
 
     public void changeSceneLoggedOut(String fxml) throws IOException {
         Parent pane = FXMLLoader.load(getClass().getResource(fxml));
         secondStage.getScene().setRoot(pane);
         secondStage.setMaximized(false);
-        secondStage.setResizable(true);
+        secondStage.setResizable(false);
+    }
+
+    public Stage getSecondStage(){
+        return secondStage;
     }
 
     public static void main(String[] args) {
