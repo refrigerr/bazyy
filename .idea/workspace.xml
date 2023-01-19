@@ -4,9 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9be11b2b-04e5-4e77-89e8-7d8c300b242d" name="Changes" comment="bawilem sie javafxem">
+    <list default="true" id="9be11b2b-04e5-4e77-89e8-7d8c300b242d" name="Changes" comment="gamer hospital">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/bazyy/mainView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/bazyy/mainView.fxml" afterDir="false" />
+    </list>
+    <list id="409e67e1-075d-4bed-9f69-b277ef97354e" name="Changes by kajet" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/java/kod/PracownikSzpitala.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kod/PracownikSzpitala.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,7 +116,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673644083430</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="gamer hospital">
+      <created>1674078431363</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1674078431363</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -134,7 +144,8 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="logowanie" />
     <MESSAGE value="bawilem sie javafxem" />
-    <option name="LAST_COMMIT_MESSAGE" value="bawilem sie javafxem" />
+    <MESSAGE value="gamer hospital" />
+    <option name="LAST_COMMIT_MESSAGE" value="gamer hospital" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
