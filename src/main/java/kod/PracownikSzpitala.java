@@ -47,7 +47,7 @@ public class PracownikSzpitala extends Osoba{
         try
         {
             ResultSet dokumentacjaSet;
-            String statement = "SELECT * FROM pacjent_dokumentacja WHERE pacjent_dokumentacja.imie_pacjenta = Jan";
+            String statement = "SELECT * FROM pacjent_dokumentacja WHERE imie_pacjenta = '"+imie+"' and nazwisko_pacjenta = '"+nazwisko+"'";
             dokumentacjaSet = DBConnector.daneStatement.executeQuery(statement);
             ResultSetMetaData rsmd = dokumentacjaSet.getMetaData();
             int columnsNumber = rsmd.getColumnCount();
