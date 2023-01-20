@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9be11b2b-04e5-4e77-89e8-7d8c300b242d" name="Changes" comment="gamer hospital">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/bazyy/mainView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/bazyy/mainView.fxml" afterDir="false" />
-    </list>
-    <list id="409e67e1-075d-4bed-9f69-b277ef97354e" name="Changes by kajet" comment="">
+    <list default="true" id="9be11b2b-04e5-4e77-89e8-7d8c300b242d" name="Changes" comment="bawilem sie javafxem">
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/bazyy/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/bazyy/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/kod/DBConnector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kod/DBConnector.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/kod/PracownikSzpitala.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kod/PracownikSzpitala.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
