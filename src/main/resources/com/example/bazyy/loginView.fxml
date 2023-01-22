@@ -19,7 +19,7 @@
             </Label>
             <TextField fx:id="loginInput" layoutX="226.0" layoutY="188.0" promptText="Login" />
             <PasswordField fx:id="hasloField" layoutX="226.0" layoutY="230.0" promptText="Hasło" />
-            <Button fx:id="loginButton" layoutX="273.0" layoutY="274.0" mnemonicParsing="false" onAction="#changeSceneLogged" onKeyPressed="#loginWithEnter" text="Zaloguj" />
+            <Button fx:id="loginButton" layoutX="273.0" layoutY="274.0" mnemonicParsing="false" onAction="#login" text="Zaloguj" />
             <Label fx:id="zlyLoginLabel" layoutX="226.0" layoutY="162.0" prefHeight="17.0" prefWidth="150.0" textFill="RED" />
          </children>
       </AnchorPane>

@@ -36,9 +36,9 @@ public class LoginController {
 
 
 
-    public void login() throws IOException, SQLException {
-
-        Main m = new Main();
+    public void login(ActionEvent event) throws IOException, SQLException, Exception {
+        //dziala
+        //Main m = new Main();
         String logindb;
         String haslozBazy;
         logindb = loginInput.getText();
@@ -53,25 +53,67 @@ public class LoginController {
 
             loginSet = DBConnector.daneStatement.executeQuery("select id_pracownika from pracownik_szpitala where id_pracownika = " + logindb);
             String loginzBazy = "";
+
             if(loginSet.next())
                 loginzBazy = loginSet.getString("id_pracownika");
 
             if((hasloField.getText().equals(haslozBazy))&& logindb.equals(loginzBazy)){
                 zalogowanyPracownik = new PracownikSzpitala(Integer.parseInt(loginInput.getText()));
-                FXMLLoader loader = new FXMLLoader();
-                loader.setLocation(getClass().getResource("mainView.fxml"));
-                Parent pane = loader.load();
-
-                Scene zalogowanoScene = new Scene(pane);
 
 
-                MainController controller = loader.getController();
-                controller.wyswietlZalogowanegoPracownika(zalogowanyPracownik);
+            FXMLLoader loader = new FXMLLoader();
+            Parent pane = null;
 
-                Stage zalogowanoStage = m.getSecondStage();
-                zalogowanoStage.setScene(zalogowanoScene);
-                zalogowanoStage.setMaximized(true);
-                zalogowanoStage.setResizable(true);
+            loginSet = DBConnector.daneStatement.executeQuery("select count(*) from pracownik_izby_przyjec where id_pracownika = " + logindb);
+            if(loginSet.next())
+                loginzBazy = loginSet.getString("count(*)");
+
+            System.out.println(loginzBazy);
+            if(loginzBazy.equals("1")){
+                System.out.println("siema");
+                loader = new FXMLLoader(getClass().getResource("pracownikIzbyPrzyjecView.fxml"));
+                pane = loader.load();
+                //PracownikIzbyPrzyjecController pracownikController = loader.getController();
+                //pracownikController.jakaś metoda z drugieko controllera
+
+            }
+
+            loginSet = DBConnector.daneStatement.executeQuery("select count(*) from pielegniarka where id_pracownika = " + logindb);
+            if(loginSet.next())
+                loginzBazy = loginSet.getString("count(*)");
+
+            if(loginzBazy.equals("1")){
+                loader = new FXMLLoader(getClass().getResource("pielegniarkaView.fxml"));
+                pane = loader.load();
+            }
+
+            loginSet = DBConnector.daneStatement.executeQuery("select count(*) from lekarz where id_pracownika = " + logindb);
+            if(loginSet.next())
+                loginzBazy = loginSet.getString("count(*)");
+
+            if(loginzBazy.equals("1")){
+                loader = new FXMLLoader(getClass().getResource("lekarzView.fxml"));
+                pane = loader.load();
+            }
+
+
+                Scene scene = new Scene(pane);
+                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                stage.setScene(scene);
+                stage.setMaximized(true);
+                stage.show();
+
+
+            //Scene zalogowanoScene = new Scene(pane);
+
+
+//            MainController controller = loader.getController();
+//            controller.wyswietlZalogowanegoPracownika(zalogowanyPracownik);
+
+//            Stage zalogowanoStage = m.getSecondStage();
+//            zalogowanoStage.setScene(zalogowanoScene);
+//            zalogowanoStage.setMaximized(true);
+//            zalogowanoStage.setResizable(true);
 
 
             }
@@ -83,16 +125,5 @@ public class LoginController {
         else
             zlyLoginLabel.setText("Pole nie może być puste");
 
-    }
-
-
-    public void changeSceneLogged() throws IOException, SQLException {
-
-        login();
-
-    }
-
-
-    public void loginWithEnter(KeyEvent keyEvent) {
     }
 }

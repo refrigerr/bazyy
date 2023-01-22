@@ -4,12 +4,31 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9be11b2b-04e5-4e77-89e8-7d8c300b242d" name="Changes" comment="gamer hospital">
+    <list default="true" id="9be11b2b-04e5-4e77-89e8-7d8c300b242d" name="Changes" comment="gamer hospitalv2">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/bazyy/AktZgonuController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/bazyy/DanePacjentaController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/bazyy/DokumentacjaMedycznaController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/bazyy/LekarzController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/bazyy/PielegniarkaController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/bazyy/PracownikIzbyPrzyjecController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/bazyy/SceneSwitching.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/bazyy/AktZgonuView.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/bazyy/danePacjentaView.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/bazyy/dokumentacjaMedycznaView.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/bazyy/lekarzView.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/bazyy/pielegniarkaView.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/bazyy/pracownikIzbyPrzyjecView.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/bazyy/mainView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/bazyy/mainView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/bazyy/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/bazyy/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/bazyy/MainController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/bazyy/loginView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/bazyy/loginView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/bazyy/mainView.fxml" beforeDir="false" />
     </list>
     <list id="409e67e1-075d-4bed-9f69-b277ef97354e" name="Changes by kajet" comment="">
       <change beforePath="$PROJECT_DIR$/src/main/java/kod/PracownikSzpitala.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kod/PracownikSzpitala.java" afterDir="false" />
+    </list>
+    <list id="58903951-4109-40cc-87b2-921556439180" name="Changes by mati101811" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/bazyy/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/bazyy/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,6 +87,10 @@
   }
 }</component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\jakub\OneDrive\Dokumenty\GitHub\bazyy\src\main\resources\com\example\bazyy" />
+      <recent name="C:\Users\jakub\OneDrive\Dokumenty\GitHub\bazyy\src\main\java\com\example\bazyy" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.example.bazyy" />
     </key>
@@ -123,7 +146,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674078431363</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="gamer hospitalv2">
+      <created>1674148790120</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1674148790121</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -145,7 +175,8 @@
     <MESSAGE value="logowanie" />
     <MESSAGE value="bawilem sie javafxem" />
     <MESSAGE value="gamer hospital" />
-    <option name="LAST_COMMIT_MESSAGE" value="gamer hospital" />
+    <MESSAGE value="gamer hospitalv2" />
+    <option name="LAST_COMMIT_MESSAGE" value="gamer hospitalv2" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
