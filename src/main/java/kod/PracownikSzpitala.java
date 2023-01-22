@@ -3,6 +3,7 @@ package kod;
 import com.example.bazyy.LoginController;
 
 import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 
 public class PracownikSzpitala extends Osoba{
@@ -41,6 +42,34 @@ public class PracownikSzpitala extends Osoba{
             e.printStackTrace();
         }
         return null;
+    }
+    public void wyswietlenieDokumentacjiPacjenta(String imie, String nazwisko){
+        try
+        {
+            ResultSet dokumentacjaSet;
+            String statement = "SELECT * FROM pacjent_dokumentacja WHERE imie_pacjenta = '"+imie+"' and nazwisko_pacjenta = '"+nazwisko+"'";
+            dokumentacjaSet = DBConnector.daneStatement.executeQuery(statement);
+            ResultSetMetaData rsmd = dokumentacjaSet.getMetaData();
+            int columnsNumber = rsmd.getColumnCount();
+
+            for (int i = 1; i <= columnsNumber; i++) {
+                if (i > 1) System.out.print(",  ");
+                System.out.print(rsmd.getColumnName(i));
+            }
+            System.out.println();
+            while (dokumentacjaSet.next()) {
+                for (int i = 1; i <= columnsNumber; i++) {
+                    if (i > 1) System.out.print(",  ");
+                    System.out.print(dokumentacjaSet.getString(i));
+                }
+                System.out.println("");
+            }
+
+
+        }catch (Exception e)
+        {
+            e.printStackTrace();
+        }
     }
 
     void danePacjenta()

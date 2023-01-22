@@ -7,6 +7,7 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import kod.DBConnector;
+import kod.PracownikSzpitala;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -30,6 +31,8 @@ public class Main extends Application {
         stage.setTitle("Szpital im. Jana Pawła II");
         stage.setScene(scene);
         stage.show();
+        PracownikSzpitala pracownikSzpitala = new PracownikSzpitala(1);
+        pracownikSzpitala.wyswietlenieDokumentacjiPacjenta("Tedi", "Keyes");
     }
 
 //    public void changeSceneLogged(String fxml) throws IOException {
