@@ -1,8 +1,13 @@
 package com.example.bazyy;
 
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.value.ObservableValue;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -18,7 +23,7 @@ import java.util.ResourceBundle;
 public class PracownikIzbyPrzyjecController implements Initializable {
 
     @FXML
-    private ComboBox<?> oddzialyComboBox;
+    private ComboBox oddzialyComboBox;
 
     @FXML
     private Button zatwierdzButton;
@@ -29,14 +34,49 @@ public class PracownikIzbyPrzyjecController implements Initializable {
     @FXML
     private Label zalogowanoLabel;
     @FXML
-    private TableView<?> pracownikIzbyPrzyjecTable;
+    private TableView<ObservableList<String>> pracownikIzbyPrzyjecTable;
+
     @FXML
-    private Label zalogowanoLabel;
+    private TableColumn imieTableColumn;
+
+    @FXML
+    private TableColumn nazwiskoTableColumn;
+
+    @FXML
+    private TableColumn nrLozkaTableColumn;
+
+    @FXML
+    private TableColumn nrPokojuTableColumn;
+
+    @FXML
+    private TableColumn oddzialTableColumn;
+
+    @FXML
+    private TableColumn peselTableColumn;
+
+
+
+    String oddzialy[] = {"oddzial", "kardiologia", "onkologia", "ratunkowy", "chirurgia", "neurologiczny"};
+    String szukanie[] = {"Imię", "Nazwisko", "PESEL", "Nr telefonu"};
+
+
+    @FXML
+    public void initialize(URL location, ResourceBundle resources) {
+        oddzialyComboBox.getItems().addAll(oddzialy);
+        opcjeSzukaniaComboBox.getItems().addAll(szukanie);
+        try {
+            przelaczNaPacjentow();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
     @FXML
     protected void szukaj() throws Exception
     {
 
     }
+
+
 
     @FXML
     protected void wyloguj(ActionEvent event) throws Exception
@@ -115,7 +155,15 @@ public class PracownikIzbyPrzyjecController implements Initializable {
     @FXML
     protected void wpiszPacjenta() throws Exception
     {
+        oddzialyComboBox.setVisible(true);
+        zatwierdzButton.setVisible(true);
+    }
 
+    @FXML
+    protected void zatwierdz()throws Exception
+    {
+        oddzialyComboBox.setVisible(false);
+        zatwierdzButton.setVisible(false);
     }
 
     @FXML
@@ -136,9 +184,5 @@ public class PracownikIzbyPrzyjecController implements Initializable {
         newWindow.setScene(new Scene(loader.load()));
         //Launch
         newWindow.show();
-    }
-
-    @FXML
-    public void zatwierdz(ActionEvent event) {
     }
 }

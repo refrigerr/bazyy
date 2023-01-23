@@ -1,17 +1,22 @@
 package com.example.bazyy;
 
+import com.almasb.fxgl.app.FXGLApplication;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
 
-public class DanePacjentaController {
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class DanePacjentaController implements Initializable {
 
     @FXML
     private Button anulujButton;
 
     @FXML
-    private ComboBox<?> grupaKrwiComboBox;
+    private ComboBox grupaKrwiComboBox;
 
     @FXML
     private TextField imieTextField;
@@ -32,7 +37,7 @@ public class DanePacjentaController {
     private TextField nrLokaluTextField;
 
     @FXML
-    private TableView<?> numerTelefonuTableView;
+    private TableView numerTelefonuTableView;
 
     @FXML
     private TextField numerTelefonuTextField;
@@ -41,10 +46,18 @@ public class DanePacjentaController {
     private TextField peselTextField;
 
     @FXML
-    private ComboBox<?> plecComboBox;
+    private ComboBox plecComboBox;
 
     @FXML
     private TextField ulicaTextField;
+
+    String grupyKrwi[] = {"A Rh+", "A Rh-", "B Rh+", "B Rh-", "AB Rh+", "AB Rh-", "0 Rh+", "0 Rh-"};
+
+    @FXML
+    public void initialize(URL location, ResourceBundle resources) {
+        grupaKrwiComboBox.getItems().addAll(grupyKrwi);
+        plecComboBox.getItems().addAll("Kobieta", "Mężczyzna");
+    }
 
     @FXML
     protected void anuluj(ActionEvent event) throws Exception

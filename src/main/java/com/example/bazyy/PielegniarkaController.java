@@ -3,6 +3,7 @@ package com.example.bazyy;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
@@ -11,7 +12,10 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-public class PielegniarkaController {
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class PielegniarkaController implements Initializable {
     @FXML
     private ComboBox opcjeSzukaniaComboBox;
     @FXML
@@ -20,6 +24,13 @@ public class PielegniarkaController {
     private Label zalogowanoLabel;
     @FXML
     private TableView pielegniarkaTable;
+
+    String szukanie[] = {"Imię", "Nazwisko", "PESEL", "Nr telefonu"};
+
+    @FXML
+    public void initialize(URL location, ResourceBundle resources) {
+        opcjeSzukaniaComboBox.getItems().addAll(szukanie);
+    }
 
     @FXML
     protected void wyloguj(ActionEvent event) throws Exception

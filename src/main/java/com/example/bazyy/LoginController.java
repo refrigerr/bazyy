@@ -34,8 +34,6 @@ public class LoginController {
 
     static ResultSet haslaSet, loginSet;
 
-
-
     public void login(ActionEvent event) throws IOException, SQLException, Exception {
         //dziala
         //Main m = new Main();

@@ -3,6 +3,7 @@ package com.example.bazyy;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
@@ -11,7 +12,10 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-public class LekarzController {
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class LekarzController implements Initializable {
 
     @FXML
     private ComboBox opcjeSzukaniaComboBox;
@@ -23,6 +27,13 @@ public class LekarzController {
 
     @FXML
     private TableView lekarzTable;
+
+    String szukanie[] = {"Imię", "Nazwisko", "PESEL", "Nr telefonu"};
+
+    @FXML
+    public void initialize(URL location, ResourceBundle resources) {
+        opcjeSzukaniaComboBox.getItems().addAll(szukanie);
+    }
 
     @FXML
     protected void wyloguj(ActionEvent event) throws Exception
