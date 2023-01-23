@@ -1,0 +1,61 @@
+Index: src/main/java/kod/PracownikSzpitala.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package kod;\r\n\r\nimport com.example.bazyy.LoginController;\r\n\r\nimport java.sql.ResultSet;\r\nimport java.sql.SQLException;\r\n\r\npublic class PracownikSzpitala extends Osoba{\r\n\r\n    private int idPracownika;\r\n\r\n    static ResultSet pracownikSet;\r\n\r\n    public PracownikSzpitala(int idPracownika) {\r\n        super();\r\n        this.idPracownika = idPracownika;\r\n    }\r\n\r\n    public String danePracownika(int IDPracownika)\r\n    {\r\n        try\r\n        {\r\n            int IDOsoby = 0;\r\n            String imie = \"\", nazwisko = \"\";\r\n\r\n            pracownikSet = DBConnector.daneStatement.executeQuery(\"SELECT id_osoby FROM pracownik_szpitala where id_pracownika = \" + IDPracownika);\r\n\r\n            if(pracownikSet.next())\r\n                IDOsoby = getIdOsoby();\r\n\r\n            pracownikSet = DBConnector.daneStatement.executeQuery(\"SELECT imie, nazwisko FROM osoba where id_osoby = \" + IDOsoby);\r\n            if (pracownikSet.next())\r\n            {\r\n                imie = pracownikSet.getString(\"imie\");\r\n                nazwisko = pracownikSet.getString(\"nazwisko\");\r\n            }\r\n            return imie + \" \" + nazwisko;\r\n\r\n        }catch (Exception e)\r\n        {\r\n            e.printStackTrace();\r\n        }\r\n        return null;\r\n    }\r\n\r\n    void danePacjenta()\r\n    {\r\n\r\n    }\r\n\r\n     public void iluPacjentow()\r\n    {\r\n        int iloscPacjentow = 0;\r\n        try {\r\n            pracownikSet = DBConnector.daneStatement.executeQuery(\"SELECT COUNT(*) FROM pacjenci_lezacy\");\r\n            if(pracownikSet.next())\r\n                iloscPacjentow = pracownikSet.getInt(1);\r\n\r\n            System.out.println(\"Obecnie w szpitalu jest \" + iloscPacjentow + \" pacjentow\");\r\n        }catch (Exception e)\r\n        {\r\n            e.printStackTrace();\r\n        }\r\n\r\n    }\r\n\r\n    void iluPacjentowOddzial()\r\n    {\r\n\r\n    }\r\n\r\n    public int getIdPracownika() {\r\n        return idPracownika;\r\n    }\r\n\r\n    public int getIdOsoby() throws SQLException {\r\n        return pracownikSet.getInt(\"id_osoby\");\r\n    }\r\n\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/kod/PracownikSzpitala.java b/src/main/java/kod/PracownikSzpitala.java
+--- a/src/main/java/kod/PracownikSzpitala.java	(revision aa217df7db530cc366d316c12f1ad376891111b7)
++++ b/src/main/java/kod/PracownikSzpitala.java	(date 1674410225306)
+@@ -1,13 +1,13 @@
+ package kod;
+ 
+ import com.example.bazyy.LoginController;
+-
++import java.sql.ResultSetMetaData;
+ import java.sql.ResultSet;
+ import java.sql.SQLException;
+ 
+ public class PracownikSzpitala extends Osoba{
+ 
+-    private int idPracownika;
++    private final int idPracownika;
+ 
+     static ResultSet pracownikSet;
+ 
+@@ -47,6 +47,34 @@
+     {
+ 
+     }
++    public void wyswietlenieDokumentacjiPacjenta(String imie, String nazwisko){
++        try
++        {
++            ResultSet dokumentacjaSet;
++            String statement = "SELECT * FROM pacjent_dokumentacja WHERE imie_pacjenta = '"+imie+"' and nazwisko_pacjenta = '"+nazwisko+"'";
++            dokumentacjaSet = DBConnector.daneStatement.executeQuery(statement);
++            ResultSetMetaData rsmd = dokumentacjaSet.getMetaData();
++            int columnsNumber = rsmd.getColumnCount();
++
++            for (int i = 1; i <= columnsNumber; i++) {
++                if (i > 1) System.out.print(",  ");
++                System.out.print(rsmd.getColumnName(i));
++            }
++            System.out.println();
++            while (dokumentacjaSet.next()) {
++                for (int i = 1; i <= columnsNumber; i++) {
++                    if (i > 1) System.out.print(",  ");
++                    System.out.print(dokumentacjaSet.getString(i));
++                }
++                System.out.println("");
++            }
++
++
++        }catch (Exception e)
++        {
++            e.printStackTrace();
++        }
++    }
+ 
+      public void iluPacjentow()
+     {

@@ -1,0 +1,52 @@
+Index: src/main/java/com/example/bazyy/Main.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.bazyy;\r\n\r\nimport javafx.application.Application;\r\nimport javafx.fxml.FXMLLoader;\r\nimport javafx.scene.Parent;\r\nimport javafx.scene.Scene;\r\nimport javafx.scene.image.Image;\r\nimport javafx.stage.Stage;\r\nimport kod.DBConnector;\r\n\r\nimport java.io.IOException;\r\nimport java.sql.SQLException;\r\n\r\npublic class Main extends Application {\r\n\r\n    private static Stage secondStage;\r\n    @Override\r\n    public void start(Stage stage) throws IOException, SQLException {\r\n        DBConnector.dane = DBConnector.connect();\r\n        assert DBConnector.dane != null;\r\n        DBConnector.daneStatement = DBConnector.dane.createStatement();\r\n\r\n        secondStage = stage;\r\n        stage.setResizable(false);\r\n        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource(\"loginView.fxml\"));\r\n        Scene scene = new Scene(fxmlLoader.load());\r\n\r\n\r\n        stage.getIcons().add(new Image(\"https://cdn2.iconfinder.com/data/icons/military-31/200/aid_first_game_heal_health_kit_life-512.png\"));\r\n        stage.setTitle(\"Szpital im. Jana Pawła II\");\r\n        stage.setScene(scene);\r\n        stage.show();\r\n    }\r\n\r\n//    public void changeSceneLogged(String fxml) throws IOException {\r\n//        FXMLLoader loader = new FXMLLoader();\r\n//        loader.setLocation(getClass().getResource(fxml));\r\n//        Parent pane = loader.load();\r\n//\r\n//        secondStage.getScene().setRoot(pane);\r\n//        secondStage.setMaximized(true);\r\n//        secondStage.setResizable(true);\r\n//\r\n//        LoginController controller = loader.getController();\r\n//    }\r\n\r\n    public void changeSceneLoggedOut(String fxml) throws IOException {\r\n        Parent pane = FXMLLoader.load(getClass().getResource(fxml));\r\n        secondStage.getScene().setRoot(pane);\r\n        secondStage.setMaximized(false);\r\n        secondStage.setResizable(false);\r\n    }\r\n\r\n    public Stage getSecondStage(){\r\n        return secondStage;\r\n    }\r\n\r\n    public static void main(String[] args) {\r\n        launch();\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/example/bazyy/Main.java b/src/main/java/com/example/bazyy/Main.java
+--- a/src/main/java/com/example/bazyy/Main.java	
++++ b/src/main/java/com/example/bazyy/Main.java	
+@@ -20,39 +20,13 @@
+         assert DBConnector.dane != null;
+         DBConnector.daneStatement = DBConnector.dane.createStatement();
+ 
+-        secondStage = stage;
+-        stage.setResizable(false);
+-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("loginView.fxml"));
+-        Scene scene = new Scene(fxmlLoader.load());
+-
+-
++        FXMLLoader fxmlLoader = new FXMLLoader(LoginController.class.getResource("loginView.fxml"));
++        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+         stage.getIcons().add(new Image("https://cdn2.iconfinder.com/data/icons/military-31/200/aid_first_game_heal_health_kit_life-512.png"));
+         stage.setTitle("Szpital im. Jana Pawła II");
+         stage.setScene(scene);
+         stage.show();
+-    }
+-
+-//    public void changeSceneLogged(String fxml) throws IOException {
+-//        FXMLLoader loader = new FXMLLoader();
+-//        loader.setLocation(getClass().getResource(fxml));
+-//        Parent pane = loader.load();
+-//
+-//        secondStage.getScene().setRoot(pane);
+-//        secondStage.setMaximized(true);
+-//        secondStage.setResizable(true);
+-//
+-//        LoginController controller = loader.getController();
+-//    }
+ 
+-    public void changeSceneLoggedOut(String fxml) throws IOException {
+-        Parent pane = FXMLLoader.load(getClass().getResource(fxml));
+-        secondStage.getScene().setRoot(pane);
+-        secondStage.setMaximized(false);
+-        secondStage.setResizable(false);
+-    }
+-
+-    public Stage getSecondStage(){
+-        return secondStage;
+     }
+ 
+     public static void main(String[] args) {

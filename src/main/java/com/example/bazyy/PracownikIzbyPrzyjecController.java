@@ -7,8 +7,15 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
+import javafx.util.Callback;
+import kod.DBConnector;
 
-public class PracownikIzbyPrzyjecController{
+import java.net.URL;
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
+import java.util.ResourceBundle;
+
+public class PracownikIzbyPrzyjecController implements Initializable {
 
     @FXML
     private ComboBox<?> oddzialyComboBox;
@@ -19,6 +26,8 @@ public class PracownikIzbyPrzyjecController{
     private ComboBox opcjeSzukaniaComboBox;
     @FXML
     private TextField daneDoSzukaniaTextField;
+    @FXML
+    private Label zalogowanoLabel;
     @FXML
     private TableView<?> pracownikIzbyPrzyjecTable;
     @FXML
@@ -43,7 +52,38 @@ public class PracownikIzbyPrzyjecController{
     @FXML
     protected void przelaczNaPacjentow() throws Exception
     {
+        ResultSet pacjentTabelaSet;
+        String statement = "SELECT * FROM obecny_pacjent_dane";
+        pacjentTabelaSet = DBConnector.daneStatement.executeQuery(statement);
 
+        for(int i=0 ; i<pacjentTabelaSet.getMetaData().getColumnCount(); i++){
+            //We are using non property style for making dynamic table
+            final int j = i;
+            TableColumn col = new TableColumn(pacjentTabelaSet.getMetaData().getColumnName(i+1));
+            col.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<ObservableList,String>, ObservableValue<String>>(){
+                public ObservableValue<String> call(TableColumn.CellDataFeatures<ObservableList, String> param) {
+                    return new SimpleStringProperty(param.getValue().get(j).toString());
+                }
+            });
+
+            pracownikIzbyPrzyjecTable.getColumns().addAll(col);
+        }
+
+        ObservableList<ObservableList<String>> data= FXCollections.observableArrayList();
+
+        while(pacjentTabelaSet.next()){
+            //Iterate Row
+            ObservableList<String> row = FXCollections.observableArrayList();
+            for(int i=1 ; i<=pacjentTabelaSet.getMetaData().getColumnCount(); i++){
+                //Iterate Column
+                row.add(pacjentTabelaSet.getString(i));
+            }
+            data.add(row);
+
+
+
+        }
+        pracownikIzbyPrzyjecTable.setItems(data);
     }
 
     @FXML

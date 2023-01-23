@@ -31,8 +31,8 @@ public class Main extends Application {
         stage.setTitle("Szpital im. Jana Pawła II");
         stage.setScene(scene);
         stage.show();
-        PracownikSzpitala pracownikSzpitala = new PracownikSzpitala(1);
-        pracownikSzpitala.wyswietlenieDokumentacjiPacjenta("Tedi", "Keyes");
+//        PracownikSzpitala pracownikSzpitala = new PracownikSzpitala(1);
+//        pracownikSzpitala.wyswietlenieDokumentacjiPacjenta("Jan", "Nowak");
     }
 
 //    public void changeSceneLogged(String fxml) throws IOException {
