@@ -14,6 +14,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 import kod.DBConnector;
+import kod.Lekarz;
 import kod.PracownikSzpitala;
 
 import java.io.IOException;
@@ -55,9 +56,14 @@ public class LoginController {
             if(loginSet.next())
                 loginzBazy = loginSet.getString("id_pracownika");
 
-            if((hasloField.getText().equals(haslozBazy))&& logindb.equals(loginzBazy)){
-                zalogowanyPracownik = new PracownikSzpitala(Integer.parseInt(loginInput.getText()));
-
+            if((hasloField.getText().equals(haslozBazy)) && logindb.equals(loginzBazy)){
+                //zalogowanyPracownik = new PracownikSzpitala(Integer.parseInt(loginInput.getText()));
+                ResultSet imieNazwiskoSet = DBConnector.daneStatement.executeQuery("select imie, nazwisko from osoba left join pracownik_szpitala on osoba.id_osoby = pracownik_szpitala.id_osoby where id_pracownika = " + logindb);
+                String imie ="", nazwisko="";
+                if(imieNazwiskoSet.next()){
+                    imie = imieNazwiskoSet.getString("imie");
+                    nazwisko = imieNazwiskoSet.getString("nazwisko");
+                }
 
             FXMLLoader loader = new FXMLLoader();
             Parent pane = null;
@@ -71,8 +77,8 @@ public class LoginController {
                 System.out.println("siema");
                 loader = new FXMLLoader(getClass().getResource("pracownikIzbyPrzyjecView.fxml"));
                 pane = loader.load();
-                //PracownikIzbyPrzyjecController pracownikController = loader.getController();
-                //pracownikController.jakaś metoda z drugieko controllera
+                PracownikIzbyPrzyjecController pracownikController = loader.getController();
+                pracownikController.zaloguj(imie,nazwisko);
 
             }
 
@@ -83,6 +89,8 @@ public class LoginController {
             if(loginzBazy.equals("1")){
                 loader = new FXMLLoader(getClass().getResource("pielegniarkaView.fxml"));
                 pane = loader.load();
+                PielegniarkaController pracownikController = loader.getController();
+                pracownikController.zaloguj(imie,nazwisko);
             }
 
             loginSet = DBConnector.daneStatement.executeQuery("select count(*) from lekarz where id_pracownika = " + logindb);
@@ -92,15 +100,16 @@ public class LoginController {
             if(loginzBazy.equals("1")){
                 loader = new FXMLLoader(getClass().getResource("lekarzView.fxml"));
                 pane = loader.load();
+                LekarzController pracownikController = loader.getController();
+                pracownikController.zaloguj(imie,nazwisko);
             }
-
-
-                Scene scene = new Scene(pane);
-                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                stage.setScene(scene);
-                stage.setMaximized(true);
-                stage.setResizable(true);
-                stage.show();
+            
+            Scene scene = new Scene(pane);
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(scene);
+            stage.setMaximized(true);
+            stage.setResizable(true);
+            stage.show();
 
 
             //Scene zalogowanoScene = new Scene(pane);

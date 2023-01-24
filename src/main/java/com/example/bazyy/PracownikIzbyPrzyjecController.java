@@ -58,11 +58,16 @@ public class PracownikIzbyPrzyjecController implements Initializable {
 
 
     String oddzialy[] = {"oddzial", "kardiologia", "onkologia", "ratunkowy", "chirurgia", "neurologiczny"};
-    String szukanie[] = {"Imię", "Nazwisko", "PESEL", "Nr telefonu"};
+    String szukanie[] = {"Imię", "Nazwisko", "PESEL"};
 
+    public void zaloguj(String imie, String nazwisko)
+    {
+        zalogowanoLabel.setText(imie+" "+nazwisko);
+    }
 
     @FXML
     public void initialize(URL location, ResourceBundle resources) {
+
         oddzialyComboBox.getItems().addAll(oddzialy);
         opcjeSzukaniaComboBox.getItems().addAll(szukanie);
         try {

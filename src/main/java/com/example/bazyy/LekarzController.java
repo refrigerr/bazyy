@@ -4,16 +4,21 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import kod.Utils;
 
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class LekarzController implements Initializable {
@@ -29,7 +34,12 @@ public class LekarzController implements Initializable {
     @FXML
     private TableView lekarzTable;
 
-    String szukanie[] = {"Imię", "Nazwisko", "PESEL", "Nr telefonu"};
+    String szukanie[] = {"Imię", "Nazwisko", "PESEL"};
+
+    public void zaloguj(String imie, String nazwisko)
+    {
+        zalogowanoLabel.setText(imie+" "+nazwisko);
+    }
 
     @FXML
     public void initialize(URL location, ResourceBundle resources) {
@@ -109,13 +119,26 @@ public class LekarzController implements Initializable {
     }
 
     @FXML
-    protected void wystawAktZgonu() throws Exception
+    protected void wystawAktZgonu(ActionEvent event) throws Exception
     {
+        String daneCzystyString = lekarzTable.getSelectionModel().getSelectedItem().toString();
+        if(daneCzystyString == null)
+            return;
+        System.out.println(daneCzystyString);
+        daneCzystyString = daneCzystyString.substring(1,daneCzystyString.length()-2);
+        String[] data = daneCzystyString.split(", ");
+        int id=Integer.parseInt(data[0]);
+        String imie= data[1], nazwisko=data[2], pesel=data[3];
+        //Create view from FXML
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("AktZgonuView.fxml"));
+        AktZgonuController nowyZgon = loader.getController();
+        nowyZgon.ustawPola(imie, nazwisko, pesel, id);
+
+
+
         //Create Stage
         Stage newWindow = new Stage();
-        newWindow.setTitle("Wystawianie aktu zgonu");
-        //Create view from FXML
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("aktZgonuView.fxml"));
+        newWindow.setTitle("Wystawianie Aktu Zgonu");
         //Set view in window
         newWindow.setScene(new Scene(loader.load()));
         //Launch
