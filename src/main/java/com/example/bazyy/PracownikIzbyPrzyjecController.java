@@ -14,6 +14,7 @@ import javafx.scene.control.*;
 import javafx.stage.Stage;
 import javafx.util.Callback;
 import kod.DBConnector;
+import kod.Utils;
 
 import java.net.URL;
 import java.sql.ResultSet;
@@ -73,6 +74,28 @@ public class PracownikIzbyPrzyjecController implements Initializable {
     @FXML
     protected void szukaj() throws Exception
     {
+        String input = "'"+daneDoSzukaniaTextField.getText()+"'";
+        String tableColumn;
+        switch ((String) opcjeSzukaniaComboBox.getValue()){
+            case "Imię":
+                tableColumn = "imie";
+                break;
+            case "Nazwisko":
+                tableColumn = "nazwisko";
+                break;
+            case "PESEL":
+                tableColumn = "pesel";
+                break;
+           // case "Nr telefonu":
+            //    tableColumn = "imie";
+            //    break;
+            default:
+                return;
+
+
+        }
+        String statement = "SELECT * FROM obecny_pacjent_dane where "+tableColumn+" = "+input;
+        Utils.populateTable(statement,pracownikIzbyPrzyjecTable);
 
     }
 
@@ -92,49 +115,24 @@ public class PracownikIzbyPrzyjecController implements Initializable {
     @FXML
     protected void przelaczNaPacjentow() throws Exception
     {
-        ResultSet pacjentTabelaSet;
         String statement = "SELECT * FROM obecny_pacjent_dane";
-        pacjentTabelaSet = DBConnector.daneStatement.executeQuery(statement);
-
-        for(int i=0 ; i<pacjentTabelaSet.getMetaData().getColumnCount(); i++){
-            //We are using non property style for making dynamic table
-            final int j = i;
-            TableColumn col = new TableColumn(pacjentTabelaSet.getMetaData().getColumnName(i+1));
-            col.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<ObservableList,String>, ObservableValue<String>>(){
-                public ObservableValue<String> call(TableColumn.CellDataFeatures<ObservableList, String> param) {
-                    return new SimpleStringProperty(param.getValue().get(j).toString());
-                }
-            });
-
-            pracownikIzbyPrzyjecTable.getColumns().addAll(col);
-        }
-
-        ObservableList<ObservableList<String>> data= FXCollections.observableArrayList();
-
-        while(pacjentTabelaSet.next()){
-            //Iterate Row
-            ObservableList<String> row = FXCollections.observableArrayList();
-            for(int i=1 ; i<=pacjentTabelaSet.getMetaData().getColumnCount(); i++){
-                //Iterate Column
-                row.add(pacjentTabelaSet.getString(i));
-            }
-            data.add(row);
-
-
-
-        }
-        pracownikIzbyPrzyjecTable.setItems(data);
+        Utils.populateTable(statement,pracownikIzbyPrzyjecTable);
     }
 
     @FXML
     protected void przelaczNaOddzialy() throws Exception
     {
+        String statement = "SELECT * FROM oddzial";
+        Utils.populateTable(statement,pracownikIzbyPrzyjecTable);
 
     }
 
     @FXML
     protected void przelaczNaKadre() throws Exception
     {
+
+        String statement = "SELECT * FROM pracownik_oddzial";
+        Utils.populateTable(statement,pracownikIzbyPrzyjecTable);
 
     }
 

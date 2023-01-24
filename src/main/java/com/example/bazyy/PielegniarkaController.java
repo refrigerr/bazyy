@@ -11,6 +11,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import kod.Utils;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -46,19 +47,42 @@ public class PielegniarkaController implements Initializable {
     @FXML
     protected void szukaj() throws Exception
     {
+        String input = "'"+daneDoSzukaniaTextField.getText()+"'";
+        String tableColumn;
+        switch ((String) opcjeSzukaniaComboBox.getValue()){
+            case "Imię":
+                tableColumn = "imie";
+                break;
+            case "Nazwisko":
+                tableColumn = "nazwisko";
+                break;
+            case "PESEL":
+                tableColumn = "pesel";
+                break;
+            // case "Nr telefonu":
+            //    tableColumn = "imie";
+            //    break;
+            default:
+                return;
 
+
+        }
+        String statement = "SELECT * FROM obecny_pacjent_dane where "+tableColumn+" = "+input;
+        Utils.populateTable(statement,pielegniarkaTable);
     }
 
     @FXML
     protected void przelaczNaPacjentow() throws Exception
     {
-
+        String statement = "SELECT * FROM obecny_pacjent_dane";
+        Utils.populateTable(statement,pielegniarkaTable);
     }
 
     @FXML
     protected void przelaczNaOddzialy() throws Exception
     {
-
+        String statement = "SELECT * FROM oddzial";
+        Utils.populateTable(statement,pielegniarkaTable);
     }
 
     @FXML
