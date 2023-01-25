@@ -1,5 +1,6 @@
 package com.example.bazyy;
 
+import javafx.animation.PauseTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -13,15 +14,14 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 import kod.Utils;
 
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.ResourceBundle;
+import java.util.*;
 
 public class LekarzController implements Initializable {
+
 
     @FXML
     private ComboBox opcjeSzukaniaComboBox;
@@ -30,7 +30,8 @@ public class LekarzController implements Initializable {
 
     @FXML
     private Label zalogowanoLabel;
-
+    @FXML
+    private Label bladLabel;
     @FXML
     private TableView lekarzTable;
 
@@ -121,41 +122,61 @@ public class LekarzController implements Initializable {
     @FXML
     protected void wystawAktZgonu(ActionEvent event) throws Exception
     {
-        String daneCzystyString = lekarzTable.getSelectionModel().getSelectedItem().toString();
-        if(daneCzystyString == null)
-            return;
-        System.out.println(daneCzystyString);
-        daneCzystyString = daneCzystyString.substring(1,daneCzystyString.length()-2);
-        String[] data = daneCzystyString.split(", ");
-        int id=Integer.parseInt(data[0]);
-        String imie= data[1], nazwisko=data[2], pesel=data[3];
-        //Create view from FXML
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("AktZgonuView.fxml"));
-        AktZgonuController nowyZgon = loader.getController();
-        nowyZgon.ustawPola(imie, nazwisko, pesel, id);
+        Object daneObject = lekarzTable.getSelectionModel().getSelectedItem();
+        if(!(daneObject == null))
+        {
+            String daneCzystyString = daneObject.toString();
+            System.out.println(daneCzystyString);
+            daneCzystyString = daneCzystyString.substring(1,daneCzystyString.length()-2);
+            String[] data = daneCzystyString.split(", ");
+            //int id=Integer.parseInt(data[0]);
+            String imie= data[0], nazwisko=data[1], pesel=data[2];
+            //Create view from FXML
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("AktZgonuView.fxml"));
+            Stage newWindow = new Stage();
+            newWindow.setScene(new Scene(loader.load()));
+            AktZgonuController nowyZgon = loader.getController();
 
+            nowyZgon.ustawPola(imie, nazwisko, pesel);
+            newWindow.setTitle("Wystawianie Aktu Zgonu");
+            newWindow.show();
+        }
+        else
+        {
+            Utils.showErrorMessage(bladLabel, "Wybierz pacjenta z listy!");
+        }
 
-
-        //Create Stage
-        Stage newWindow = new Stage();
-        newWindow.setTitle("Wystawianie Aktu Zgonu");
-        //Set view in window
-        newWindow.setScene(new Scene(loader.load()));
-        //Launch
-        newWindow.show();
     }
 
     @FXML
     protected void pokazDanePacjenta(ActionEvent event) throws Exception
     {
-        //Create Stage
-        Stage newWindow = new Stage();
-        newWindow.setTitle("Dane Pacjenta");
-        //Create view from FXML
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("danePacjentaView.fxml"));
-        //Set view in window
-        newWindow.setScene(new Scene(loader.load()));
-        //Launch
-        newWindow.show();
+        Object daneObject = lekarzTable.getSelectionModel().getSelectedItem();
+        if(!(daneObject == null)) {
+
+            String daneCzystyString = daneObject.toString();
+            System.out.println(daneCzystyString);
+            daneCzystyString = daneCzystyString.substring(1,daneCzystyString.length()-2);
+            String[] data = daneCzystyString.split(", ");
+            //int id=Integer.parseInt(data[0]);
+            String imie= data[0], nazwisko=data[1], pesel=data[2];
+            //Create Stage
+            Stage newWindow = new Stage();
+            newWindow.setTitle("Dane Pacjenta");
+            //Create view from FXML
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("danePacjentaView.fxml"));
+            //Set view in window
+            newWindow.setScene(new Scene(loader.load()));
+
+            DanePacjentaController danePacjenta = loader.getController();
+            danePacjenta.ustawPola(imie, nazwisko, pesel);
+
+            //Launch
+            newWindow.show();
+        }
+        else
+        {
+            Utils.showErrorMessage(bladLabel, "Wybierz pacjenta z listy!");
+        }
     }
 }

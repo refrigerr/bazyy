@@ -1,12 +1,15 @@
 package kod;
 
+import javafx.animation.PauseTransition;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.util.Callback;
+import javafx.util.Duration;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -42,5 +45,14 @@ public class Utils {
             data.add(row);
         }
         tabela.setItems(data);
+    }
+
+    public static void showErrorMessage(Label bladLabel,String errorMsg){
+        bladLabel.setVisible(true);
+        bladLabel.setText(errorMsg);
+
+        PauseTransition hideBladLabel = new PauseTransition(Duration.seconds(3));
+        hideBladLabel.setOnFinished(e -> bladLabel.setVisible(false));
+        hideBladLabel.play();
     }
 }

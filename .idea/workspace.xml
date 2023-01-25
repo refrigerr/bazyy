@@ -4,22 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9be11b2b-04e5-4e77-89e8-7d8c300b242d" name="Changes" comment="gui dziala mniej wiecej">
+    <list default="true" id="9be11b2b-04e5-4e77-89e8-7d8c300b242d" name="Changes" comment="tableview niepolecam">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/bazyy/AktZgonuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/bazyy/AktZgonuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/bazyy/DanePacjentaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/bazyy/DanePacjentaController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/bazyy/LekarzController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/bazyy/LekarzController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/bazyy/PracownikIzbyPrzyjecController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/bazyy/PracownikIzbyPrzyjecController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/kod/DBConnector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kod/DBConnector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/kod/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kod/Utils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/bazyy/AktZgonuView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/bazyy/AktZgonuView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/bazyy/lekarzView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/bazyy/lekarzView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/bazyy/loginView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/bazyy/loginView.fxml" afterDir="false" />
     </list>
     <list id="409e67e1-075d-4bed-9f69-b277ef97354e" name="Changes by kajet" comment="" />
-    <list id="b7a5058b-af92-4263-a99f-d4f6b982d22d" name="Changes by mati1" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/bazyy/AktZgonuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/bazyy/AktZgonuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/bazyy/LekarzController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/bazyy/LekarzController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/bazyy/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/bazyy/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/bazyy/PielegniarkaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/bazyy/PielegniarkaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/bazyy/PracownikIzbyPrzyjecController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/bazyy/PracownikIzbyPrzyjecController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/bazyy/AktZgonuView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/bazyy/AktZgonuView.fxml" afterDir="false" />
-    </list>
-    <list id="9a72c9ef-1551-4b51-9f8d-0c4fbfe986ce" name="Changes by mati101811" comment="" />
+    <list id="9a72c9ef-1551-4b51-9f8d-0c4fbfe986ce" name="Changes by mati101811" comment="Changes by mati101811" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -48,35 +45,6 @@
         <option name="url" value="https://github.com/refrigerr/bazyy.git" />
       </UrlAndAccount>
     </option>
-  </component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/src/main/java/com/example/bazyy/AktZgonuController.java">
-      <ranges>
-        <range start1="4" end1="4" start2="4" end2="5" changelist="b7a5058b-af92-4263-a99f-d4f6b982d22d" />
-        <range start1="9" end1="10" start2="10" end2="15" changelist="9be11b2b-04e5-4e77-89e8-7d8c300b242d" />
-        <range start1="13" end1="13" start2="18" end2="19" changelist="b7a5058b-af92-4263-a99f-d4f6b982d22d" />
-        <range start1="30" end1="30" start2="36" end2="39" changelist="9be11b2b-04e5-4e77-89e8-7d8c300b242d" />
-        <range start1="37" end1="37" start2="46" end2="57" changelist="9be11b2b-04e5-4e77-89e8-7d8c300b242d" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/src/main/java/com/example/bazyy/LekarzController.java">
-      <ranges>
-        <range start1="6" end1="6" start2="6" end2="7" changelist="b7a5058b-af92-4263-a99f-d4f6b982d22d" />
-        <range start1="12" end1="12" start2="13" end2="14" changelist="9be11b2b-04e5-4e77-89e8-7d8c300b242d" />
-        <range start1="16" end1="16" start2="18" end2="21" changelist="b7a5058b-af92-4263-a99f-d4f6b982d22d" />
-        <range start1="31" end1="32" start2="36" end2="42" changelist="b7a5058b-af92-4263-a99f-d4f6b982d22d" />
-        <range start1="111" end1="112" start2="121" end2="122" changelist="b7a5058b-af92-4263-a99f-d4f6b982d22d" />
-        <range start1="113" end1="116" start2="123" end2="131" changelist="b7a5058b-af92-4263-a99f-d4f6b982d22d" />
-        <range start1="117" end1="118" start2="132" end2="141" changelist="b7a5058b-af92-4263-a99f-d4f6b982d22d" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/src/main/java/com/example/bazyy/PracownikIzbyPrzyjecController.java">
-      <ranges>
-        <range start1="60" end1="61" start2="60" end2="61" changelist="b7a5058b-af92-4263-a99f-d4f6b982d22d" />
-        <range start1="62" end1="62" start2="62" end2="66" changelist="b7a5058b-af92-4263-a99f-d4f6b982d22d" />
-        <range start1="65" end1="65" start2="69" end2="70" changelist="9be11b2b-04e5-4e77-89e8-7d8c300b242d" />
-      </ranges>
-    </file>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
