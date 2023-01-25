@@ -17,12 +17,15 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class PielegniarkaController implements Initializable {
+
     @FXML
     private ComboBox opcjeSzukaniaComboBox;
     @FXML
     private TextField daneDoSzukaniaTextField;
     @FXML
     private Label zalogowanoLabel;
+    @FXML
+    private Label bladLabel;
     @FXML
     private TableView pielegniarkaTable;
 
@@ -93,15 +96,7 @@ public class PielegniarkaController implements Initializable {
     @FXML
     protected void pokazDanePacjenta(ActionEvent event) throws Exception
     {
-        //Create Stage
-        Stage newWindow = new Stage();
-        newWindow.setTitle("Dane Pacjenta");
-        //Create view from FXML
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("danePacjentaView.fxml"));
-        //Set view in window
-        newWindow.setScene(new Scene(loader.load()));
-        //Launch
-        newWindow.show();
+        PracownikSzpitalaController.danePacjenta(pielegniarkaTable,bladLabel);
     }
 
 

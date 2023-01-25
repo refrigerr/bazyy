@@ -16,6 +16,7 @@ import javafx.util.Callback;
 import kod.DBConnector;
 import kod.Utils;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
@@ -34,6 +35,8 @@ public class PracownikIzbyPrzyjecController implements Initializable {
     private TextField daneDoSzukaniaTextField;
     @FXML
     private Label zalogowanoLabel;
+    @FXML
+    private Label bladLabel;
     @FXML
     private TableView<ObservableList<String>> pracownikIzbyPrzyjecTable;
 
@@ -178,9 +181,23 @@ public class PracownikIzbyPrzyjecController implements Initializable {
     @FXML
     protected void pokazDanePacjenta(ActionEvent event) throws Exception
     {
+        PracownikSzpitalaController.danePacjenta(pracownikIzbyPrzyjecTable, bladLabel);
+        //Create Stage
+//        Stage newWindow = new Stage();
+//        newWindow.setTitle("Dane Pacjenta");
+//        //Create view from FXML
+//        FXMLLoader loader = new FXMLLoader(getClass().getResource("danePacjentaView.fxml"));
+//        //Set view in window
+//        newWindow.setScene(new Scene(loader.load()));
+//        //Launch
+//        newWindow.show();
+    }
+
+    @FXML
+    protected void zarejestruj(ActionEvent event) throws IOException {
         //Create Stage
         Stage newWindow = new Stage();
-        newWindow.setTitle("Dane Pacjenta");
+        newWindow.setTitle("Zarejestruj Pacjenta");
         //Create view from FXML
         FXMLLoader loader = new FXMLLoader(getClass().getResource("danePacjentaView.fxml"));
         //Set view in window
@@ -188,4 +205,6 @@ public class PracownikIzbyPrzyjecController implements Initializable {
         //Launch
         newWindow.show();
     }
+
+
 }

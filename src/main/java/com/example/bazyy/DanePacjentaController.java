@@ -104,7 +104,19 @@ public class DanePacjentaController implements Initializable {
     @FXML
     protected void zapisz(ActionEvent event) throws Exception
     {
+        String imie = imieTextField.getText();
+        String nazwisko = nazwiskoTextField.getText();
+        String plec = plecComboBox.getAccessibleText();
+        String pesel = peselTextField.getText();
+        String kodPocztowy =kodPocztowyTextField.getText();
+        String miasto = miastoTextField.getText();
+        String ulica = ulicaTextField.getText();
+        String nrBudynku = nrBudynkuTextField.getText();
+        String nrLokalu = nrLokaluTextField.getText();
+        String grupaKrwi = grupaKrwiComboBox.getAccessibleText();
 
+        String query = "Pojebane w chuj zapytanie tu bedzie bo trzeba sie odwolac do 4 roznych tabel a nie da sie z widoku tego zrobic :DDD";
+        //ResultSet zapiszSet = DBConnector.daneStatement.executeQuery(query);
     }
 }
 

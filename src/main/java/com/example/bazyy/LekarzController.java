@@ -151,32 +151,33 @@ public class LekarzController implements Initializable {
     @FXML
     protected void pokazDanePacjenta(ActionEvent event) throws Exception
     {
-        Object daneObject = lekarzTable.getSelectionModel().getSelectedItem();
-        if(!(daneObject == null)) {
-
-            String daneCzystyString = daneObject.toString();
-            System.out.println(daneCzystyString);
-            daneCzystyString = daneCzystyString.substring(1,daneCzystyString.length()-2);
-            String[] data = daneCzystyString.split(", ");
-            //int id=Integer.parseInt(data[0]);
-            String imie= data[0], nazwisko=data[1], pesel=data[2];
-            //Create Stage
-            Stage newWindow = new Stage();
-            newWindow.setTitle("Dane Pacjenta");
-            //Create view from FXML
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("danePacjentaView.fxml"));
-            //Set view in window
-            newWindow.setScene(new Scene(loader.load()));
-
-            DanePacjentaController danePacjenta = loader.getController();
-            danePacjenta.ustawPola(imie, nazwisko, pesel);
-
-            //Launch
-            newWindow.show();
-        }
-        else
-        {
-            Utils.showErrorMessage(bladLabel, "Wybierz pacjenta z listy!");
-        }
+        PracownikSzpitalaController.danePacjenta(lekarzTable,bladLabel);
+//        Object daneObject = lekarzTable.getSelectionModel().getSelectedItem();
+//        if(!(daneObject == null)) {
+//
+//            String daneCzystyString = daneObject.toString();
+//            System.out.println(daneCzystyString);
+//            daneCzystyString = daneCzystyString.substring(1,daneCzystyString.length()-2);
+//            String[] data = daneCzystyString.split(", ");
+//            //int id=Integer.parseInt(data[0]);
+//            String imie= data[0], nazwisko=data[1], pesel=data[2];
+//            //Create Stage
+//            Stage newWindow = new Stage();
+//            newWindow.setTitle("Dane Pacjenta");
+//            //Create view from FXML
+//            FXMLLoader loader = new FXMLLoader(getClass().getResource("danePacjentaView.fxml"));
+//            //Set view in window
+//            newWindow.setScene(new Scene(loader.load()));
+//
+//            DanePacjentaController danePacjenta = loader.getController();
+//            danePacjenta.ustawPola(imie, nazwisko, pesel);
+//
+//            //Launch
+//            newWindow.show();
+//        }
+//        else
+//        {
+//            Utils.showErrorMessage(bladLabel, "Wybierz pacjenta z listy!");
+//        }
     }
 }

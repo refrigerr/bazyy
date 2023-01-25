@@ -66,6 +66,11 @@
          <children>
             <VBox alignment="CENTER" prefHeight="147.0" prefWidth="273.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <children>
+                  <Label fx:id="bladLabel" prefHeight="17.0" prefWidth="182.0" textFill="RED">
+                     <VBox.margin>
+                        <Insets bottom="20.0" />
+                     </VBox.margin>
+                  </Label>
                   <Button fx:id="daneButton" alignment="CENTER" minHeight="40.0" mnemonicParsing="false" onAction="#pokazDanePacjenta" prefWidth="150.0" style="-fx-background-color: #55a; -fx-text-fill: white; -fx-border-color: white;" text="Dane pacjenta" textAlignment="CENTER">
                      <font>
                         <Font name="Dubai Regular" size="14.0" />

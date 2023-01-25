@@ -62,3 +62,21 @@ public class Main extends Application {
         launch();
     }
 }
+
+//TODO: nowy przycisk ze wszystkimi pacjentami a nie tylko z tymi obecnymi w szpitalu bo mamy przycisk wpisz pacjenta
+// na oddzial a nie ma jak wyswietlic pacjentow ktorzy nie leżą obecnie w szpitalu
+
+//TODO: Przenieść funkcjonalności które dotyczą każdego pracownika jak np. szukaj do PracownikSzpitalaController zeby
+// nie pisac tych samych metod 3 razy
+
+//TODO: Wyswietlać gdzieś ilość wszystkich pacjentów i tabelę z ilością pacjentów na oddziałach / dodać do tabeli
+// oddziały ilość wolnych łóżek
+
+//TODO: Ogarnąć zapisywanie nowych pacjentów i edytowanie danych bo to mogą być bardzo nieprzyjemne zapytania do bazy
+
+//TODO: Są śmiszne bugi w stylu można wybrać oddział z tabeli i wystawić mu akt zgonu XDD
+
+//TODO: Zmienić łączenie z DBConnectora bo każdy ma dostęp do roota zamiast tylko swoich uprawnień
+// (ale to chyba dużo roboty a i tak jest w chuj tych wyżej)
+
+//TODO: pozdrawiam mamy jeden dzien :D
