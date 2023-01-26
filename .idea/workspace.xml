@@ -4,20 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9be11b2b-04e5-4e77-89e8-7d8c300b242d" name="Changes" comment="wypisanie danych pacjenta i fix aktu zgonu">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/bazyy/PracownikSzpitalaController.java" afterDir="false" />
+    <list default="true" id="9be11b2b-04e5-4e77-89e8-7d8c300b242d" name="Changes" comment="small fixes o 6 nad ranem :))">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/bazyy/DanePacjentaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/bazyy/DanePacjentaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/bazyy/LekarzController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/bazyy/LekarzController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/bazyy/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/bazyy/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/bazyy/PielegniarkaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/bazyy/PielegniarkaController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/bazyy/PracownikIzbyPrzyjecController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/bazyy/PracownikIzbyPrzyjecController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/kod/DBConnector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kod/DBConnector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/bazyy/pielegniarkaView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/bazyy/pielegniarkaView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/bazyy/PracownikSzpitalaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/bazyy/PracownikSzpitalaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/bazyy/dokumentacjaMedycznaView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/bazyy/dokumentacjaMedycznaView.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/bazyy/pracownikIzbyPrzyjecView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/bazyy/pracownikIzbyPrzyjecView.fxml" afterDir="false" />
     </list>
-    <list id="409e67e1-075d-4bed-9f69-b277ef97354e" name="Changes by kajet" comment="" />
-    <list id="9a72c9ef-1551-4b51-9f8d-0c4fbfe986ce" name="Changes by mati101811" comment="Changes by mati101811" />
+    <list id="409e67e1-075d-4bed-9f69-b277ef97354e" name="Changes by kajet" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/bazyy/AktZgonuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/bazyy/AktZgonuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/bazyy/DokumentacjaMedycznaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/bazyy/DokumentacjaMedycznaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/bazyy/LekarzController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/bazyy/LekarzController.java" afterDir="false" />
+    </list>
+    <list id="9a72c9ef-1551-4b51-9f8d-0c4fbfe986ce" name="Changes by mati101811" comment="Changes by mati101811">
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/bazyy/DanePacjentaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/bazyy/DanePacjentaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/bazyy/PracownikIzbyPrzyjecController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/bazyy/PracownikIzbyPrzyjecController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/bazyy/PracownikSzpitalaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/bazyy/PracownikSzpitalaController.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -46,6 +50,33 @@
         <option name="url" value="https://github.com/refrigerr/bazyy.git" />
       </UrlAndAccount>
     </option>
+  </component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/src/main/java/com/example/bazyy/PracownikIzbyPrzyjecController.java">
+      <ranges>
+        <range start1="59" end1="59" start2="59" end2="60" changelist="9be11b2b-04e5-4e77-89e8-7d8c300b242d" />
+        <range start1="145" end1="145" start2="146" end2="152" changelist="9be11b2b-04e5-4e77-89e8-7d8c300b242d" />
+        <range start1="204" end1="204" start2="211" end2="213" changelist="9a72c9ef-1551-4b51-9f8d-0c4fbfe986ce" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/main/java/com/example/bazyy/PracownikSzpitalaController.java">
+      <ranges>
+        <range start1="22" end1="24" start2="22" end2="24" changelist="9a72c9ef-1551-4b51-9f8d-0c4fbfe986ce" />
+        <range start1="33" end1="34" start2="33" end2="35" changelist="9be11b2b-04e5-4e77-89e8-7d8c300b242d" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/main/java/com/example/bazyy/DanePacjentaController.java">
+      <ranges>
+        <range start1="12" end1="12" start2="12" end2="13" changelist="9be11b2b-04e5-4e77-89e8-7d8c300b242d" />
+        <range start1="18" end1="18" start2="19" end2="21" changelist="9a72c9ef-1551-4b51-9f8d-0c4fbfe986ce" />
+        <range start1="59" end1="59" start2="62" end2="66" changelist="9a72c9ef-1551-4b51-9f8d-0c4fbfe986ce" />
+        <range start1="65" end1="72" start2="72" end2="79" changelist="9be11b2b-04e5-4e77-89e8-7d8c300b242d" />
+        <range start1="73" end1="73" start2="80" end2="83" changelist="9be11b2b-04e5-4e77-89e8-7d8c300b242d" />
+        <range start1="106" end1="116" start2="116" end2="152" changelist="9be11b2b-04e5-4e77-89e8-7d8c300b242d" />
+        <range start1="117" end1="119" start2="153" end2="159" changelist="9be11b2b-04e5-4e77-89e8-7d8c300b242d" />
+        <range start1="122" end1="146" start2="162" end2="162" changelist="9be11b2b-04e5-4e77-89e8-7d8c300b242d" />
+      </ranges>
+    </file>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -158,7 +189,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674618437081</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="small fixes o 6 nad ranem :))">
+      <created>1674622912019</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1674622912019</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -183,7 +221,18 @@
     <MESSAGE value="gamer hospitalv2" />
     <MESSAGE value="gui dziala mniej wiecej" />
     <MESSAGE value="wypisanie danych pacjenta i fix aktu zgonu" />
-    <option name="LAST_COMMIT_MESSAGE" value="wypisanie danych pacjenta i fix aktu zgonu" />
+    <MESSAGE value="small fixes o 6 nad ranem :))" />
+    <option name="LAST_COMMIT_MESSAGE" value="small fixes o 6 nad ranem :))" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NullPointerException" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

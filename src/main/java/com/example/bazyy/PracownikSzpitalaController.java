@@ -31,7 +31,8 @@ public class PracownikSzpitalaController {
             newWindow.setScene(new Scene(loader.load()));
 
             DanePacjentaController danePacjenta = loader.getController();
-            danePacjenta.ustawPola(imie, nazwisko, pesel);
+            danePacjenta.ustawPola(id);
+            danePacjenta.setCzyJuzJest(true);
 
             //Launch
             newWindow.show();

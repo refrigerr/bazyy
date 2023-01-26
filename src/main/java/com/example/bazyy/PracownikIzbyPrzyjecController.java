@@ -60,6 +60,7 @@ public class PracownikIzbyPrzyjecController implements Initializable {
 
 
 
+
     String oddzialy[] = {"oddzial", "kardiologia", "onkologia", "ratunkowy", "chirurgia", "neurologiczny"};
     String szukanie[] = {"Imię", "Nazwisko", "PESEL"};
 
@@ -142,6 +143,12 @@ public class PracownikIzbyPrzyjecController implements Initializable {
         String statement = "SELECT * FROM pracownik_oddzial";
         Utils.populateTable(statement,pracownikIzbyPrzyjecTable);
 
+    }
+    @FXML
+    protected void przelaczNaWszystkichPacjentow() throws Exception{
+
+        String statement = "Select pacjent.id_pacjenta as id, osoba.imie, osoba.nazwisko, osoba.pesel from osoba join pacjent on osoba.id_osoby = pacjent.id_osoby;";
+        Utils.populateTable(statement,pracownikIzbyPrzyjecTable);
     }
 
     @FXML
