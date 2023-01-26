@@ -209,6 +209,8 @@ public class PracownikIzbyPrzyjecController implements Initializable {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("danePacjentaView.fxml"));
         //Set view in window
         newWindow.setScene(new Scene(loader.load()));
+        DanePacjentaController daneController = loader.getController();
+        daneController.setCzyJuzJest(false);
         //Launch
         newWindow.show();
     }

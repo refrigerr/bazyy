@@ -17,6 +17,8 @@ import java.util.ResourceBundle;
 
 public class DanePacjentaController implements Initializable {
 
+    public boolean czyJuzJest;
+    public String idPacjenta;
     @FXML
     private Button anulujButton;
 
@@ -57,6 +59,10 @@ public class DanePacjentaController implements Initializable {
     private TextField ulicaTextField;
 
     String grupyKrwi[] = {"A Rh+", "A Rh-", "B Rh+", "B Rh-", "AB Rh+", "AB Rh-", "0 Rh+", "0 Rh-"};
+
+    public void setCzyJuzJest(boolean czyJuzJest) {
+        this.czyJuzJest = czyJuzJest;
+    }
 
     @FXML
     public void initialize(URL location, ResourceBundle resources) {

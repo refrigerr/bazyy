@@ -20,8 +20,8 @@ public class PracownikSzpitalaController {
             System.out.println(daneCzystyString);
             daneCzystyString = daneCzystyString.substring(1,daneCzystyString.length()-2);
             String[] data = daneCzystyString.split(", ");
-            //int id=Integer.parseInt(data[0]);
-            String imie= data[0], nazwisko=data[1], pesel=data[2];
+            String id = data[0];
+            //String imie= data[1], nazwisko=data[2], pesel=data[3];
             //Create Stage
             Stage newWindow = new Stage();
             newWindow.setTitle("Dane Pacjenta");
