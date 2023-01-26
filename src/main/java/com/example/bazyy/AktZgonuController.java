@@ -45,9 +45,9 @@ public class AktZgonuController implements Initializable {
         stage.close();
     }
 
-    public void ustawPola(String imie, String nazwisko, String pesel)
+    public void ustawPola(int id, String imie, String nazwisko, String pesel)
     {
-
+        this.id = id;
         imieLabel.setText(imie);
 
         nazwiskoLabel.setText(nazwisko);
