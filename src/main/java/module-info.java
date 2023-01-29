@@ -8,7 +8,7 @@ module com.example.bazyy {
     requires com.almasb.fxgl.all;
     requires java.sql;
 
-    opens com.example.bazyy to javafx.fxml;
-    exports com.example.bazyy;
+    opens controllers to javafx.fxml;
+    exports controllers;
 
 }

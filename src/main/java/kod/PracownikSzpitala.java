@@ -1,12 +1,10 @@
 package kod;
 
-import com.example.bazyy.LoginController;
-
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 
-public class PracownikSzpitala extends Osoba{
+public class PracownikSzpitala {
 
     private int idPracownika;
 

@@ -1,4 +1,4 @@
-package com.example.bazyy;
+package controllers;
 
 import com.almasb.fxgl.app.FXGLApplication;
 import javafx.event.ActionEvent;
@@ -150,11 +150,9 @@ public class DanePacjentaController implements Initializable {
             statement.setString(9, nrBudynku);
             statement.setString(10, nrLokalu);
             statement.execute();
-
-            query = "";
         }
         else
-        {   //tu dajemy apdate, where id_pacjenta = <to id co mamy>
+        {
 
         }
     }

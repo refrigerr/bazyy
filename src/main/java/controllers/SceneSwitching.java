@@ -1,4 +1,4 @@
-package com.example.bazyy;
+package controllers;
 
 import javafx.event.Event;
 import javafx.fxml.FXMLLoader;

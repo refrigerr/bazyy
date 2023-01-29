@@ -1,4 +1,4 @@
-package com.example.bazyy;
+package controllers;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -7,7 +7,6 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import kod.DBConnector;
-import kod.PracownikSzpitala;
 
 import java.io.IOException;
 import java.sql.SQLException;

@@ -21,7 +21,6 @@ public class Utils {
         pacjentTabelaSet = DBConnector.daneStatement.executeQuery(zapytanie);
         tabela.getColumns().clear();
         for(int i=0 ; i<pacjentTabelaSet.getMetaData().getColumnCount(); i++){
-            //We are using non property style for making dynamic table
             final int j = i;
             TableColumn col = new TableColumn(pacjentTabelaSet.getMetaData().getColumnName(i+1));
             col.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<ObservableList,String>, ObservableValue<String>>(){
@@ -36,10 +35,8 @@ public class Utils {
         ObservableList<ObservableList<String>> data= FXCollections.observableArrayList();
 
         while(pacjentTabelaSet.next()){
-            //Iterate Row
             ObservableList<String> row = FXCollections.observableArrayList();
             for(int i=1 ; i<=pacjentTabelaSet.getMetaData().getColumnCount(); i++){
-                //Iterate Column
                 row.add(pacjentTabelaSet.getString(i));
             }
             data.add(row);

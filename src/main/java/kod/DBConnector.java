@@ -8,8 +8,7 @@ import java.sql.Statement;
 public class DBConnector {
 
     static String url = "jdbc:mysql://localhost:3306/szpital";
-    static String username = "root";
-    //static String password = "admin";
+    static String username = "admin";
     static String password = "mysqlpass";
     public static Connection dane;
     public static Statement daneStatement;

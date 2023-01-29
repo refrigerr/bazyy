@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="228.0" prefWidth="580.0" scaleShape="false" style="-fx-background-color: #333; -fx-border-color: white;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bazyy.AktZgonuController">
+<AnchorPane prefHeight="228.0" prefWidth="580.0" scaleShape="false" style="-fx-background-color: #333; -fx-border-color: white;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.AktZgonuController">
     <children>
         <Label layoutX="70.0" layoutY="35.0" style="-fx-text-fill: white;" text="[*] Wystawianie aktu zgonu [*]">
             <font>

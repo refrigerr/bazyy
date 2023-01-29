@@ -1,8 +1,5 @@
-package com.example.bazyy;
+package controllers;
 
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.value.ObservableValue;
-import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -12,14 +9,10 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
-import javafx.util.Callback;
-import kod.DBConnector;
 import kod.Utils;
 
 import java.io.IOException;
 import java.net.URL;
-import java.sql.ResultSet;
-import java.sql.ResultSetMetaData;
 import java.util.ResourceBundle;
 
 public class PracownikIzbyPrzyjecController implements Initializable {

@@ -1,6 +1,5 @@
-package com.example.bazyy;
+package controllers;
 
-import com.example.bazyy.Main;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -11,10 +10,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 import kod.DBConnector;
-import kod.Lekarz;
 import kod.PracownikSzpitala;
 
 import java.io.IOException;
@@ -36,8 +33,7 @@ public class LoginController {
     static ResultSet haslaSet, loginSet;
 
     public void login(ActionEvent event) throws IOException, SQLException, Exception {
-        //dziala
-        //Main m = new Main();
+
         String logindb;
         String haslozBazy;
         logindb = loginInput.getText();
@@ -57,8 +53,8 @@ public class LoginController {
                 loginzBazy = loginSet.getString("id_pracownika");
 
             if((hasloField.getText().equals(haslozBazy)) && logindb.equals(loginzBazy)){
-                //zalogowanyPracownik = new PracownikSzpitala(Integer.parseInt(loginInput.getText()));
-                ResultSet imieNazwiskoSet = DBConnector.daneStatement.executeQuery("select imie, nazwisko from osoba left join pracownik_szpitala on osoba.id_osoby = pracownik_szpitala.id_osoby where id_pracownika = " + logindb);
+                ResultSet imieNazwiskoSet = DBConnector.daneStatement.executeQuery("select imie, nazwisko from osoba " +
+                        "left join pracownik_szpitala on osoba.id_osoby = pracownik_szpitala.id_osoby where id_pracownika = " + logindb);
                 String imie ="", nazwisko="";
                 if(imieNazwiskoSet.next()){
                     imie = imieNazwiskoSet.getString("imie");
@@ -72,9 +68,7 @@ public class LoginController {
             if(loginSet.next())
                 loginzBazy = loginSet.getString("count(*)");
 
-            System.out.println(loginzBazy);
             if(loginzBazy.equals("1")){
-                System.out.println("siema");
                 loader = new FXMLLoader(getClass().getResource("pracownikIzbyPrzyjecView.fxml"));
                 pane = loader.load();
                 PracownikIzbyPrzyjecController pracownikController = loader.getController();
